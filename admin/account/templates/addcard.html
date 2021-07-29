@@ -1,0 +1,48 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+        <title>{% block block_title %}{% endblock block_title %}</title>
+
+        <!-- App css -->
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" />
+
+        <script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+
+    </head>
+
+    <body>
+
+        <div class="account-pages"></div>
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class="text-center">
+                <a href="index.html" class="logo"><span>User<span>detail</span></span></a>
+                <h5 class="text-muted m-t-0 font-600"></h5>
+
+            </div>
+            <!-- end card-box-->
+<div class="m-t-40 card-box">
+                <div class="text-center">
+                    <h4 class="text-uppercase font-bold m-b-0">Add info</h4>
+                </div>
+                <div class="p-20">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit">
+      </form>
+</div>
+  </div>
+</div>
+
+{% endblock block_content %}

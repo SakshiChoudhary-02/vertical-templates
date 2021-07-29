@@ -1,0 +1,40 @@
+{% extends 'category/index.html' %}
+{% load static %}
+{% block block1_content %}
+        	<div class="content-page">
+                <div class="content-page">
+                <!-- Start content -->
+                    <div class="content">
+                        <div class="container-fluid">
+
+
+                                <div class="col-md-6">
+                                    <div class="card-box">
+                                        <h4 class="m-t-0 m-b-30 header-title">Category form</h4>
+
+                                        <form class="form-horizontal m-t-20" action="{% url 'create' %}" method="post">
+                                            {% csrf_token %}
+                                            {{ form.as_p }}
+
+                                            <br><br>
+
+                                             <div class="form-group text-right m-b-0">
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                                    Submit
+                                                </button>
+
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer text-right">
+                    2016 - 2018 © Adminto. Coderthemes.com
+                </footer>
+
+            </div>
+
+{% endblock block1_content %}

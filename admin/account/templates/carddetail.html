@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block block_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 pt-5">
+            <img class="card-img-top" src="https://via.placeholder.com/150x100">
+            <h2 class="pt-5">{{card.title}}</h2>
+            <p>{{card.text}}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock block_content %}

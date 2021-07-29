@@ -1,0 +1,76 @@
+
+{% load static %}
+{% block block_content %}
+<div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+<div>
+  <div>
+    <div>
+
+      <!-- SECTION FILTER
+       ==================================================-->
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+          <div class="portfolioFilter">
+
+              <div class="btn-group btn-group-justified m-b-10">
+                  <a class="btn btn-primary waves-effect waves-light" role="button">All Cards</a>
+                  <a class="btn btn-warning waves-effect waves-light" role="button">+Add Card</a>
+              </div>
+            <a href="http://127.0.0.1:8000/dashboard/" data-filter="*" class="current waves-effect waves-custom">All Cards</a>
+            <a href="http://127.0.0.1:8000/addcard/" data-filter=".natural" class="waves-effect waves-custom">+Add Card</a>
+          </div>
+        </div>
+      </div>
+      <!-- LIST OF CARDS-->
+       <!--==================================================-->
+    <div>
+       <div class="col-md-6 col-lg-3">
+        <div class="card m-b-20">
+			{% for object in object_list %}
+            <div class="card-body">
+                                        <!-- card title-->
+
+                <h4 class="card-title">{{ object.title }}</h4>
+                <h6 class="card-subtitle text-muted">AVAILABLE all brands !</h6>
+            </div>
+                                    <!-- card image-->
+
+            <img class="img-fluid" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/fc/f7/a4/small-bird.jpg?w=100&h=100&s=1" alt="Card image cap">
+            <div class="card-body">
+
+                                        <!-- card text-->
+
+                <p class="card-text">{{ object.text }}</p>
+
+                                        <!-- card operations(edit, view, delete)-->
+
+                <a href="carddetail.html" class="card-link">View Card</a>
+                <a href="editcard.html" class="card-link">Edit Card</a>
+                <a href="deletecard.html" class="card-link">Delete Card</a>
+
+            {% empty %}
+            <h1>No objects yet.</h1>
+            {% endfor %}
+            </div>
+        </div>
+
+       </div>
+    </div>
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>
+                        </div>
+
+                <footer class="footer text-right">
+                    2016 - 2018 © Adminto. Coderthemes.com
+                </footer>
+                </div>
+        </div>
+
+{% endblock block_content %}
